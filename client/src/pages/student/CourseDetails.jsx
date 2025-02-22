@@ -15,6 +15,7 @@ const CourseDetails = () => {
   const [openSections, setOpenSections] = useState({});
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false);
   const [playerData, setPlayerData] = useState(null);
+  const educatorName = courseData?.educator?.name || "Educator";
 
   const {
     allCourses,
@@ -75,7 +76,7 @@ const CourseDetails = () => {
 
   useEffect(() => {
     if(userData && courseData){
-      setIsAlreadyEnrolled(userData.enrollCourse.includes(courseData._id));
+      setIsAlreadyEnrolled(userData.enrolledCourses.includes(courseData._id));
     }
   }, [userData,courseData]);
   return courseData ? (
@@ -124,7 +125,7 @@ const CourseDetails = () => {
           <p className="text-sm">
             Course by{" "}
             <span className="text-blue-600 underline">
-              {courseData.educator.name}
+              {educatorName}
             </span>
           </p>
 
@@ -284,7 +285,7 @@ const CourseDetails = () => {
               </div>
             </div>
 
-            <button onClick={enrollCourse()}  className="md:mt-6 mt-4 w-full py-3 rounded bg-blue-600  text-white font-medium">
+            <button onClick={enrollCourse}  className="md:mt-6 mt-4 w-full py-3 rounded bg-blue-600  text-white font-medium">
               {isAlreadyEnrolled ? "Alreday Enrolled" : "Enroll Now"}
             </button>
 

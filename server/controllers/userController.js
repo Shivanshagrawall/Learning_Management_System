@@ -28,7 +28,7 @@ export const userEnrolledCourses=async(req,res)=>{
         
         res.json({success:true,enrolledCourses:userData.enrolledCourses});
     } catch (error) {
-        res.json({success:false,message:error.message});
+        res.json({success:false,message:error.message,});
     }
 }
 

@@ -473,7 +473,7 @@ export const dummyCourses = [
                         "lectureDuration": 850,
                         "lectureUrl": "https://youtu.be/-HeadgoqJ7A",
                         "isPreviewFree": false,
-                        "lectureOrder": 2
+                        "lectureOrder": 2,
                     }
                 ]
             }
